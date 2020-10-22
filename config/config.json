@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "800206161Slf*",
-    "database": "passport_demo",
+    "database": "codeConnection",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

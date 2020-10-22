@@ -12,26 +12,18 @@ module.exports = function(sequelize, DataTypes) {
     firstName: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
-      validate: {
-          isfirstName: true
-      }
+
     },
   lastName: {
        type: DataTypes.STRING,
        allowNull: false,
-       unique: true,
-       validate: {
-           islastName: true
-       }
+
   },
   phone: {
     type: DataTypes.STRING,
     allowNull: false,
     unique: true,
-    validate: {
-        isPhone: true
-    }
+
 },
     // The email cannot be null, and must be a proper email before creation
     email: {
@@ -50,10 +42,6 @@ module.exports = function(sequelize, DataTypes) {
     status: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true
-      }
     }
   });
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database

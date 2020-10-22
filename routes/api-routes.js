@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+const user = require("../models/user");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -18,10 +19,7 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", (req, res) => {
-    db.User.create({
-      email: req.body.email,
-      password: req.body.password
-    })
+    db.User.create(req.body)
       .then(() => {
         res.redirect(307, "/api/login");
       })
@@ -38,16 +36,21 @@ module.exports = function(app) {
 
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", (req, res) => {
+    console.log("===>", req.user)
     if (!req.user) {
       // The user is not logged in, send back an empty object
       res.json({});
     } else {
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
-      res.json({
-        email: req.user.email,
-        id: req.user.id
-      });
+      const userWithBlankPass = {...req.user, password:""}
+      console.log(req.user, userWithBlankPass)
+      res.json(userWithBlankPass);
     }
   });
+  app.get("/api/available",(req, res)=>{
+    db.User.findAll({status:"recent grad", attributes:["email","firstName", "lastName"]}).then(results=>{
+      res.json(results)
+    })
+  })
 };

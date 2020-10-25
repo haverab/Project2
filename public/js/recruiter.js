@@ -13,6 +13,7 @@ $(document).ready(() => {
   
       for (var i = 0; i < data.length; i++) {
         $(".container").append(`
+        
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">${data[i].firstName} ${data[i].lastName}</h5>

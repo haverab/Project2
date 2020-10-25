@@ -65,7 +65,7 @@ module.exports = function(app) {
     })
   });
   app.get("/api/gigs",(req, res)=>{
-    db.Gigs.findAll({attributes:["jobTitle","city", "state"]}).then(results=>{
+    db.Gigs.findAll({attributes:["jobTitle","city", "state", "jobUrl"]}).then(results=>{
        res.json(results)
      })
    });

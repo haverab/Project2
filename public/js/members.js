@@ -1,6 +1,6 @@
 $(document).ready(() => {
   
-  var nameInput = $(".container2");
+  
   
  
 
@@ -8,21 +8,7 @@ $(document).ready(() => {
     $(".member-name").text(data.email);
   });
 
-  $.get("/api/available").then(data => {
-
-    for (var i = 0; i < data.length; i++) {
-      $(".container").append(`
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">${data[i].firstName} ${data[i].lastName}</h5>
-          <p class="card-text">Email: ${data[i].email}</p>
-          <a href="#" class="btn btn-primary">Hire Me!</a>
-        </div>
-      </div>
-      `)
-    }
-
-  })
+  
 
   $.get("/api/gigs").then(data => {
 
@@ -30,9 +16,9 @@ $(document).ready(() => {
       $(".container").append(`
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">${data[i].jobTitle} ${data[i].city}</h5>
-          <p class="card-text">Email: ${data[i].state}</p>
-          <a href="#" class="btn btn-primary">Hire Me!</a>
+          <h5 class="card-title">${data[i].jobTitle}</h5>
+          <p class="card-text">${data[i].city} ${data[i].state}</p>
+          <a href="#" class="btn btn-primary">Gig It!</a>
         </div>
       </div>
       `)

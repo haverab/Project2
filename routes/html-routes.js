@@ -6,6 +6,8 @@ const path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
+ 
+
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
@@ -19,11 +21,11 @@ module.exports = function(app) {
 
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the members page
-    if (req.user.usertype==="student" || req.user.userType==="recent grad") {
+    if (req.user) {
       res.redirect("/members");
     } else {
     
-    res.sendFile(path.join(__dirname, "../public/recruiterView.html"));
+    res.sendFile(path.join(__dirname, "../public/login.html"));
     }
   });
 
@@ -31,12 +33,15 @@ module.exports = function(app) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
    console.log(req.user)
-   if(req.user.userType === "recent grad" || req.user.userType==="student"){
-    res.sendFile(path.join(__dirname, "../public/members.html"));
+   if(req.user.userType==="recruiter"){
+     console.log("I am a recruiter")
+     res.sendFile(path.join(__dirname, "../public/recruiterView.html"));
+   }else {
+ res.sendFile(path.join(__dirname, "../public/members.html"));
    }
-  else{
-    res.sendFile(path.join(__dirname, "../public/recruiterView.html"));
-  }
   });
+
+
+   
 };
 

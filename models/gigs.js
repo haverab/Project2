@@ -39,7 +39,7 @@ module.exports = function(sequelize, DataTypes) {
 
     jobURL: {
       type: DataTypes.STRING,
-     allowNull: false,
+     allowNull: true,
       
   },
   // })

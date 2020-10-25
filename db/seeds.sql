@@ -1,4 +1,6 @@
 
+use codeConnection;
+
 INSERT INTO users (firstName, lastName, phone, email, password, userType, createdAt, updatedAt)
 VALUES ('Tristan', 'Eastman', 201-555-5555, 'tires@hireme.com','password1', 'recent grad',NOW(), NOW());
 INSERT INTO users (firstName, lastName, phone, email, password, userType, createdAt, updatedAt)

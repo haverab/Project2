@@ -1,7 +1,9 @@
 // Requiring our models and passport as we've configured it
 
 const passport = require("../config/passport");
-const user = require("../models/user");
+const user = require("../models");
+
+
 var db = require("../models");
 
 module.exports = function(app) {
@@ -20,7 +22,7 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
-
+    
     db.User.create(req.body)
       
    
@@ -32,7 +34,7 @@ module.exports = function(app) {
       });
     });
 
-
+   
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
@@ -54,10 +56,23 @@ module.exports = function(app) {
     }
   });
 
-  //Route to return available candidates on the browser
+
+
+//  Route to return available candidates on the browser
   app.get("/api/available",(req, res)=>{
-    db.User.findAll({userType:"recent grad", attributes:["email","firstName", "lastName"]}).then(results=>{
+   db.User.findAll({attributes:["email","firstName", "lastName"]}).then(results=>{
       res.json(results)
     })
-  })
+  });
+  app.get("/api/gigs",(req, res)=>{
+    db.Gigs.findAll({attributes:["jobTitle","city", "state"]}).then(results=>{
+       res.json(results)
+     })
+   });
+
+
+ 
+
+
+
 }

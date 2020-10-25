@@ -2,3 +2,20 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+h2{
+  text-align: center;
+}
+.signup {
+  margin: auto;
+  width: 100%; 
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+label {
+    margin: 5px;
+    font-weight: 20px;
+      }
+  input{
+      margin:5px;
+  }

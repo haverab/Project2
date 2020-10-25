@@ -41,7 +41,7 @@ $(document).ready(() => {
     // Does a post to the signup route. If successful, we are redirected to the members page
     // Otherwise we log any errors
     function signUpRecruiter(firstName, lastName, companyName, email, password, url) {
-      $.post("/api/signup", {
+      $.post("/api/recruit", {
         firstName: firstName,
         lastName: lastName,
         companyName: companyName,

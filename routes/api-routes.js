@@ -1,7 +1,8 @@
 // Requiring our models and passport as we've configured it
-const db = require("../models");
+
 const passport = require("../config/passport");
 const user = require("../models/user");
+var db = require("../models");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -19,6 +20,7 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
+
     db.User.create(req.body)
       
    
@@ -51,8 +53,10 @@ module.exports = function(app) {
       res.json(userWithBlankPass);
     }
   });
+
+  //Route to return available candidates on the browser
   app.get("/api/available",(req, res)=>{
-    db.User.findAll({status:"recent grad", attributes:["email","firstName", "lastName"]}).then(results=>{
+    db.User.findAll({userType:"recent grad", attributes:["email","firstName", "lastName"]}).then(results=>{
       res.json(results)
     })
   })

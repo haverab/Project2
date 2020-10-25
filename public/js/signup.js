@@ -19,7 +19,7 @@ $(document).ready(() => {
       phone: phoneInput.val().trim(),
       email: emailInput.val().trim(),
       password: passwordInput.val().trim(),
-      userType: typeInput.val(),
+      userType: typeInput.val().trim(),
      
 
     };

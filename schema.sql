@@ -2,3 +2,6 @@
 DROP DATABASE IF EXISTS codeConnection;
 -- Creates the "todolist" database --
 CREATE DATABASE codeConnection;
+
+
+

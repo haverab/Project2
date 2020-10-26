@@ -29,5 +29,13 @@ $(document).ready(() => {
     }
   
     })
+
     
-  });
+    $(".gig").on("click", function () {
+      event.stopPropagation();
+      $.get("/gigs")
+        });
+      
+    })
+    
+  

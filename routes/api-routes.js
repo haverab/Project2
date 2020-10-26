@@ -64,6 +64,8 @@ module.exports = function(app) {
       res.json(results)
     })
   });
+
+  // Route to get all gigs 
   app.get("/api/gigs",(req, res)=>{
     db.Gigs.findAll({attributes:["jobTitle","city", "state", "jobUrl"]}).then(results=>{
        res.json(results)
@@ -71,7 +73,8 @@ module.exports = function(app) {
    });
 
 
- 
+  
+
 
 
 

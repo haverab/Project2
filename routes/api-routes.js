@@ -1,6 +1,10 @@
 // Requiring our models and passport as we've configured it
-const db = require("../models");
+
 const passport = require("../config/passport");
+const user = require("../models");
+
+
+var db = require("../models");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -17,19 +21,20 @@ module.exports = function(app) {
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
-  app.post("/api/signup", (req, res) => {
-    db.User.create({
-      email: req.body.email,
-      password: req.body.password
-    })
-      .then(() => {
+  app.post("/api/signup", function(req, res) {
+    
+    db.User.create(req.body)
+      
+   
+      .then(function() {
         res.redirect(307, "/api/login");
       })
-      .catch(err => {
+      .catch(function(err) {
         res.status(401).json(err);
       });
-  });
+    });
 
+   
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
@@ -38,16 +43,44 @@ module.exports = function(app) {
 
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", (req, res) => {
+    console.log("===>", req.user)
     if (!req.user) {
       // The user is not logged in, send back an empty object
       res.json({});
     } else {
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
-      res.json({
-        email: req.user.email,
-        id: req.user.id
-      });
+      const userWithBlankPass = {...req.user, password:""}
+      console.log(req.user, userWithBlankPass)
+      res.json(userWithBlankPass);
     }
   });
-};
+
+
+
+//  Route to return available candidates on the browser
+  app.get("/api/available",(req, res)=>{
+   db.User.findAll({attributes:["email","firstName", "lastName","phone","userType","imgUrl"]}).then(results=>{
+      res.json(results)
+    })
+  });
+
+  app.get("/api/gig",(req, res)=>{
+    db.Gigs.findAll({attributes:["jobTitle","city", "state","jobUrl"]}).then(results=>{
+       res.json(results)
+     })
+   });
+  // update gig using sequelize
+  app.post("/api/gig", function(req, res) {
+    
+    db.Gigs.create(req.body)
+  });
+
+ 
+
+  
+
+
+
+
+}

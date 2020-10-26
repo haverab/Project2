@@ -20,7 +20,7 @@ $(document).ready(() => {
             <h5 class="card-title">${data[i].firstName} ${data[i].lastName}</h5>
             <p class="card-text">${data[i].email}</p>
             <p class="card-text">${data[i].phone}</p>     
-            <img src="${data[i].imgUrl}" alt="alternatetext">                 
+            <img src="${data[i].imgUrl}" id="cardImg" alt="alternatetext">                 
             <a href="mailto:${data[i].email}" class="btn btn-primary">Hire Me!</a>
           </div>
         </div>

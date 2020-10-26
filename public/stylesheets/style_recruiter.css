@@ -13,3 +13,25 @@ h2{
     input{
         margin:5px;
     }
+
+    .card {
+        padding-top: 5px;
+        display: inline-table;
+        text-align: center;
+        margin: 7px;
+        color: black;
+        font-weight: bold;
+        text-shadow: 5px 5px 7px rgb(73, 72, 71); 
+        border-radius: 30px;
+        width: 250px;
+        max-width: fit-content;
+        height: 350px;
+        max-height: fit-content;
+        background-color: rgba(500, 500, 500, 0.827);
+        animation: bounceInLeft; 
+        animation-duration: 2s;
+           
+        }
+
+       
+      

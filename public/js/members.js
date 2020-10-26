@@ -1,7 +1,6 @@
 $(document).ready(() => {
 
 
-getGigs()
 
 
   $("#cityButton").on("click", function () {
@@ -78,7 +77,6 @@ $.get("/api/user_data").then(data => {
 });
 
 
-function getGigs(){
 $.get("/api/gig").then(data => {
 
   for (var i = 0; i < data.length; i++) {
@@ -95,7 +93,6 @@ $.get("/api/gig").then(data => {
   }
 
 })
-}
 
 
 })

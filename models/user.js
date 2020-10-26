@@ -41,10 +41,11 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // imgURL: {
-    //   type: DataTypes.STRING,
-    //   allowNull: true,
-    // },
+
+    imgUrl: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     // resumeURL: {
     //   type: DataTypes.STRING,
     //   allowNull: false

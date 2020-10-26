@@ -60,7 +60,7 @@ module.exports = function(app) {
 
 //  Route to return available candidates on the browser
   app.get("/api/available",(req, res)=>{
-   db.User.findAll({attributes:["email","firstName", "lastName"]}).then(results=>{
+   db.User.findAll({attributes:["email","firstName", "lastName","phone","userType"]}).then(results=>{
       res.json(results)
     })
   });

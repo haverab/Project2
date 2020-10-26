@@ -65,13 +65,13 @@ module.exports = function(app) {
     })
   });
 
-  // Route to get all gigs 
-  app.get("/api/gigs",(req, res)=>{
-    db.Gigs.findAll({attributes:["jobTitle","city", "state", "jobUrl"]}).then(results=>{
-       res.json(results)
-     })
-   });
+  // update gig using sequelize
+  app.post("/api/gig", function(req, res) {
+    
+    db.Gigs.create(req.body)
+  });
 
+ 
 
   
 

@@ -1,11 +1,11 @@
 
 use codeConnection;
 
-INSERT INTO users (firstName, lastName, phone, email, password, userType, createdAt, updatedAt)
+INSERT INTO user (firstName, lastName, phone, email, password, userType, createdAt, updatedAt)
 VALUES ('Tristan', 'Eastman', 201-555-5555, 'tires@hireme.com','password1', 'recent grad',NOW(), NOW());
-INSERT INTO users (firstName, lastName, phone, email, password, userType, createdAt, updatedAt)
+INSERT INTO user (firstName, lastName, phone, email, password, userType, createdAt, updatedAt)
 VALUES ('Dallis', 'Conner', '540-555-5555', 'dconner@hireme.com', 'password2', 'student', NOW(), NOW());
-INSERT INTO users (firstName, lastName, phone, email, password, userType, createdAt, updatedAt)
+INSERT INTO user (firstName, lastName, phone, email, password, userType, createdAt, updatedAt)
 VALUES ('Sendy', 'Mederos', '201-555-5555','smederos@hireme.com', 'password3', 'recent grad', NOW(), NOW());
 
 INSERT INTO recruiters (firstName, lastName, companyName, email, password, createdAt, updatedAt) 

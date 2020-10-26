@@ -31,7 +31,7 @@ $(document).ready(() => {
           <h5 class="card-title">${data[i].jobTitle}</h5>
           <p class="card-text">${data[i].city} ${data[i].state}</p>
           <p class="card-text">${data[i].jobUrl}</p>
-          <a href="#" class="btn btn-primary" id="gig">Gig It!</a>
+          <a href="${data[i].jobUrl}" class="btn btn-primary" id="gig">Gig It!</a>
         </div>
       </div>
       `)

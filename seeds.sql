@@ -9,9 +9,14 @@ VALUES ('Dallis', 'Conner', 'dconner@hireme.com', 540-555-5555, 'student');
 INSERT INTO USER (firstName, lastName, email, phone, userType) 
 VALUES ('Sendy', 'Mederos', 'smederos@hireme.com', 201-555-5555, 'recent grad');
 
-INSERT INTO gigs (city, state, jobTitle)
-VALUES ('Charlotte', 'North Carolina', 'Jr. Web Developer');
-INSERT INTO gigs (city, state, jobTitle) 
-VALUES ('Charlotte', 'North Carolina', 'Front End Developer');
-INSERT INTO gigs (city, state, jobTitle)
-VALUES ('Charlotte', 'North Carolina', 'Full Stack Web Developer');
+
+
+INSERT INTO gigs (jobTitle, city, state, jobURL, createdAt, updatedAt, UserId)
+VALUES('Jr. Web Developer', 'Charlotte','North Carolina', 'http://www.uncc.edu', NOW(), NOW(), 4);
+
+INSERT INTO gigs (jobTitle, city, state, jobURL, createdAt, updatedAt, UserId)
+VALUES('Front End Developer', 'Charlotte', 'North Carolina', 'http://www.indeed.com', NOW(), NOW(), 3);
+
+INSERT INTO gigs (jobTitle, city, state, jobURL, createdAt, updatedAt, UserId)
+VALUES('Full Stack Web Developer', 'Memphis', 'Tennessee', 'http://linkedin.com', NOW(), NOW(), 4);
+

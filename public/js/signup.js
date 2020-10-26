@@ -5,6 +5,7 @@ $(document).ready(() => {
   const lastInput=$("input#lastName");
   const phoneInput=$("input#phone");
   const emailInput = $("input#email-input");
+  const imgInput = $("input#img");
   const passwordInput = $("input#password-input");
  
   const typeInput=$("input#userType");
@@ -20,6 +21,7 @@ $(document).ready(() => {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim(),
       userType: typeInput.val().trim(),
+      imgUrl: imgInput.val().trim(),
      
 
     };
@@ -28,19 +30,20 @@ $(document).ready(() => {
       return;
     }
     // If we have an email and password, run the signUpUser function
-    signUpUser(userData.firstName, userData.lastName, userData.phone, userData.email, userData.password,userData.userType);
+    signUpUser(userData.firstName, userData.lastName, userData.phone, userData.email, userData.password,userData.userType,userData.imgUrl);
     firstInput.val("");
     lastInput.val("");
     phoneInput.val("");
     emailInput.val("");
     passwordInput.val("");
     typeInput.val("");
+    imgInput.val("");
    
   });
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  function signUpUser(firstName, lastName, phone, email, password,userType) {
+  function signUpUser(firstName, lastName, phone, email, password,userType,imgUrl) {
     $.post("/api/signup", {
       firstName: firstName,
       lastName: lastName,
@@ -48,6 +51,7 @@ $(document).ready(() => {
       email: email,
       password: password,
       userType: userType,
+      imgUrl: imgUrl
     })
       .then(() => {
         window.location.replace("/members");

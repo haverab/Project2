@@ -40,7 +40,10 @@ module.exports = function(app) {
    }
   });
 
-
+  // gig route loads gig.html
+  app.get("/gig", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/gigform.html"));
+  });
    
 };
 

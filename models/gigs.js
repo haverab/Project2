@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
     },
 
     jobURL: {
-      type: DataTypes.STRING,
+     type: DataTypes.STRING,
      allowNull: true,
       
   },

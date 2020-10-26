@@ -1,7 +1,7 @@
 $(document).ready(() => {
 
 
-
+getGigs()
 
 
   $("#cityButton").on("click", function () {
@@ -11,10 +11,13 @@ $(document).ready(() => {
 
   $("#clearButton").on("click", function () {
     event.stopPropagation();
-    $.get("/api/gigs").then(data => {
+  
 
-      for (var i = 0; i < data.length; i++) {
-        $(".container2").append(`
+  $.get("/api/gig").then(data => {
+
+
+    for (var i = 0; i < data.length; i++) {
+      $(".container2").append(`
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">${data[i].jobTitle}</h5>
@@ -24,29 +27,29 @@ $(document).ready(() => {
       </div>
     </div>
     `)
-      }
+    }
 
-    })
-
-    
   })
 
-  function searchCity() {
 
-    let citySearch = $('#input').val()
+})
 
-    $(".container2").empty();
-    $(".container2").append(`<div id= "main-row"class="grid-row"></div>`)
+function searchCity() {
 
-    $.get("/api/gigs").then(data => {
+  let citySearch = $('#input').val()
 
-      //console.log(data)
-      
-      for (var i = 0; i < data.length; i++) {
-        if (data[i].city === citySearch) {
-        
+  $(".container2").empty();
+  $(".container2").append(`<div id= "main-row"class="grid-row"></div>`)
+
+  $.get("/api/gig").then(data => {
+
+    //console.log(data)
+
+    for (var i = 0; i < data.length; i++) {
+      if (data[i].city === citySearch) {
+
         console.log(data[i].city)
-          $(".container2").append(`
+        $(".container2").append(`
 
       <div class="card">
         <div class="card-body">
@@ -57,29 +60,29 @@ $(document).ready(() => {
         </div>
       </div>
       `)
-        }
       }
-    
-     
-    })
-  }
-  
-      
-  
-    
-  
+    }
 
 
-      $.get("/api/user_data").then(data => {
-        $(".member-name").text(data.email);
-      });
+  })
+}
 
 
 
-      $.get("/api/gigs").then(data => {
 
-        for (var i = 0; i < data.length; i++) {
-          $(".container2").append(`
+
+
+
+$.get("/api/user_data").then(data => {
+  $(".member-name").text(data.email);
+});
+
+
+function getGigs(){
+$.get("/api/gig").then(data => {
+
+  for (var i = 0; i < data.length; i++) {
+    $(".container2").append(`
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">${data[i].jobTitle}</h5>
@@ -89,9 +92,10 @@ $(document).ready(() => {
         </div>
       </div>
       `)
-        }
+  }
 
-      })
+})
+}
 
 
-    });
+})

@@ -6,9 +6,10 @@ $(document).ready(() => {
   const phoneInput=$("input#phone");
   const emailInput = $("input#email-input");
   const imgInput = $("input#img");
+  const messageInput=$("input#msg");
   const passwordInput = $("input#password-input");
  
-  const typeInput=$("input#userType");
+  const typeInput=$("#userType");
   
 
   // When the signup button is clicked, we validate the email and password are not blank
@@ -19,8 +20,9 @@ $(document).ready(() => {
       lastName: lastInput.val().trim(),
       phone: phoneInput.val().trim(),
       email: emailInput.val().trim(),
+      msg: messageInput.val().trim(),
       password: passwordInput.val().trim(),
-      userType: typeInput.val().trim(),
+      userType: typeInput.val(),
       imgUrl: imgInput.val().trim(),
      
 
@@ -36,6 +38,7 @@ $(document).ready(() => {
     phoneInput.val("");
     emailInput.val("");
     passwordInput.val("");
+    messageInput.val("");
     typeInput.val("");
     imgInput.val("");
    
@@ -43,12 +46,13 @@ $(document).ready(() => {
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  function signUpUser(firstName, lastName, phone, email, password,userType,imgUrl) {
+  function signUpUser(firstName, lastName, phone, email, password,message, userType,imgUrl) {
     $.post("/api/signup", {
       firstName: firstName,
       lastName: lastName,
       phone: phone,
       email: email,
+      message: message,
       password: password,
       userType: userType,
       imgUrl: imgUrl

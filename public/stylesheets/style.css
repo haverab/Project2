@@ -1,6 +1,7 @@
 form.signup,
 form.login {
   margin-top: 50px;
+
 }
 
 h2{
@@ -48,8 +49,17 @@ label {
     .container{
       border-radius: 5px;
       border-color: black; 
-      
+      float:left;
     }
-  
+/*     
+    body{
+    background-image: url("background1.png");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    background-attachment: fixed;
+    font-family: 'Roboto Condensed', sans-serif;
+    } */
    
     

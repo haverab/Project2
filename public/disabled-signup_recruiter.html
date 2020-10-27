@@ -6,7 +6,11 @@
     <link href="stylesheets/style_recruiter.css" type="text/css" rel="stylesheet"/>
     <title>Document</title>
 </head>
-<body>
+
+<body id="gigstyle">
+
+
+
     <h2>Recruiter Registration</h2>
 <form class="register" action="/action_page.php">
   <label for="fname">First Name:</label><br>
@@ -18,11 +22,12 @@
   <label for="recruiterEmail">Email Address:</label><br>
   <input type="text" id="email" name="email" placeholder="john@email.com"><br>
   <label for="password">Password:</label><br>
-  <input type="text" id="password" name="password" placeholder="password"><br>
-  <label for="jobUrl">Job Posting URL:</label><br>
-  <input type="text" id="url" name="url" placeholder="https://careers.example.com/"><br>
-  <input type="submit" value="Submit">
-  <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+
+  <input type="text" id="password" name="password" placeholder="password"><br><br>
+
+  <button><a href="/public/gigform.html">Post a Gig</a></button>
+  <p>If you click the "Post a Gig" button, the form-data will be sent to a "Gig Form".</p>
+
 </form>
 </body>
 </html>

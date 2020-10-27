@@ -9,6 +9,28 @@
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+  <style>
+    body {
+      background-color: tan
+    }
+    .jumbotron {
+      color: white;
+      background-color: black;
+      margin-top: 10px;
+    }
+
+    .card-header {
+      background-color: darkgrey;
+    }
+    .card-body {
+      background-color: lightgray;
+    }
+    .btn {
+      background-color: black;
+    }
+  </style>
+
+
 </head>
 <body>
 
@@ -23,7 +45,9 @@
 
         <div class="card">
           <div class="card-header">
-            <h3><strong>Add Gig</strong></h3>
+
+            <h3><strong>Add a Gig</strong></h3>
+
           </div>
           <div class="card-body">
             <form method="POST" role="form">
@@ -56,11 +80,18 @@
             </form>
             <br>
             <div class="text-right">
+
+              <button type="submit" class="btn btn-primary btn-md" id="add-btn"><span class="fa fa-fire"></span> Add Gig</button>
+            </div>
+          </div>
+        </div>
+
               <button type="submit" class="btn btn-primary btn-md" id="gigbtn"><span class="fa fa-fire"></span> Add Gig</button>
             </div>
           </div>
         </div>
         <div id="container2" class="container2"></div>
+
 
       </div>
     </div>

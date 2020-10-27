@@ -60,18 +60,26 @@ module.exports = function(app) {
 
 //  Route to return available candidates on the browser
   app.get("/api/available",(req, res)=>{
-   db.User.findAll({attributes:["email","firstName", "lastName"]}).then(results=>{
+   db.User.findAll({attributes:["email","firstName", "lastName","phone","userType","imgUrl"]}).then(results=>{
       res.json(results)
     })
   });
-  app.get("/api/gigs",(req, res)=>{
-    db.Gigs.findAll({attributes:["jobTitle","city", "state", "jobUrl"]}).then(results=>{
+
+  app.get("/api/gig",(req, res)=>{
+    db.Gigs.findAll({attributes:["jobTitle","city", "state","jobUrl"]}).then(results=>{
        res.json(results)
      })
    });
-
+  // update gig using sequelize
+  app.post("/api/gig", function(req, res) {
+    
+    db.Gigs.create(req.body)
+  });
 
  
+
+  
+
 
 
 

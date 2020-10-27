@@ -7,18 +7,13 @@ module.exports = function(sequelize, DataTypes) {
         primaryKey: true
       },
 
-      recruiterId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        unique: true
+      // recruiterId: {
+      //   type: DataTypes.INTEGER,
+      //   allowNull: false,
+      //   unique: false
   
-      },
-      userId: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        unique: true
-  
-      },
+      // },
+     
     jobTitle: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -38,20 +33,20 @@ module.exports = function(sequelize, DataTypes) {
     },
 
     jobURL: {
-      type: DataTypes.STRING,
+     type: DataTypes.STRING,
      allowNull: true,
       
   },
-  // })
-  //   Gigs.associate = function(models) {
-  //     Gigs.belongsTo(models.User, {
-  //       foreignKey: {
-         
-  //         allowNull: false
-  //       }
-  //     });
-  //   };
-})
+});
+// Gigs.associate = function(models) {
+//   // We're saying that a Gig should belong to an User
+//   // A Gig can't be created without a User due to the foreign key constraint
+//   Gigs.belongsTo(models.User, {
+//     foreignKey: {
+//       allowNull: false
+//     }
+//   });
+// };
    
     return Gigs;
   };

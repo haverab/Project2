@@ -45,8 +45,8 @@ label {
     height: 350px;
     max-height: fit-content;
     background-color: rgba(500, 500, 500, 0.827);
-    animation: bounceInLeft; 
-    animation-duration: 2s;
+    /* animation: bounceInLeft; 
+    animation-duration: 2s; */
     border-color: black;
        
     }

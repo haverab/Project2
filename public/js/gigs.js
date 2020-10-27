@@ -4,7 +4,7 @@ $(document).ready(() => {
     var cityInput = $("#city");
     var stateInput = $("#state");
     var urlInput = $("#joburl");
-    //var authorContainer = $(".author-container");
+
    
   
     $.get("/api/user_data").then(data => {
@@ -17,6 +17,7 @@ $(document).ready(() => {
     $("#gigbtn").on("click", function () {
       event.stopPropagation();
       
+
       upsertGigs({
         jobTitle: jobInput.val().trim(),
         city: cityInput.val().trim(),
@@ -28,9 +29,36 @@ $(document).ready(() => {
 
     //update the gigs db with input
       function upsertGigs(data) {
-        $.post("/api/gig", data);
-     
+        $.post("/api/gig", data)
+        .then(res=>{
+          if(res === "OK"){
+            window.location = "/recruitergigs"
+          }
+        })
+     //getGigs()
         }
+
+
+        
+
+         // This function grabs posts from the database and updates the view
+  // function getGigs(recruiter) {
+  //   userId = recruiter || "";
+  //   if (userId) {
+  //     userId = "/?User_id=" + userId;
+  //   }
+  //   $.get("/api/gigs" + userId, function(data) {
+  //     console.log("Gigs", data);
+  //     gigs = data;
+  //     if (!gigs || !gigs.length) {
+  //       displayEmpty(recruiter);
+  //     }
+  //     else {
+  //       initializeRows();
+
+  //     }
+  //   });
+  // }
       
 
 

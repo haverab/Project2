@@ -79,6 +79,8 @@ $.get("/api/user_data").then(data => {
 
 $.get("/api/gig").then(data => {
 
+
+
   for (var i = 0; i < data.length; i++) {
     $(".container2").append(`
       <div class="card">

@@ -7,9 +7,9 @@ const init =()=>{
           <div class="card">
             <div class="card-body">
           
-              <h5 class="card-title">JobTitle: ${res[i].jobTitle}</h5>
-              <p class="card-text">${res[i].city} ${res[i].state}</p>
-              
+              <h4 class="card-title">JobTitle: ${res[i].jobTitle}</h4>
+              <h5 class="card-text">${res[i].city} ${res[i].state}</h5>
+              <hr>
                </div>
           </div>
           `)

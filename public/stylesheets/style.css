@@ -38,8 +38,13 @@ label {
     animation: bounceInLeft; 
     animation-duration: 2s;
     border-color: black;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
        
-    }
+    
 
  #cardImg {
   border-radius: 50%;
@@ -65,3 +70,6 @@ label {
     h1{
       text-align: center;
     }
+    /* body{
+      background-color: tan;
+    } */

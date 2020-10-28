@@ -36,6 +36,7 @@ $(document).ready(() => {
 function searchCity() {
 
   let citySearch = $('#input').val()
+  let stateSearch =$('#state').val()
 
   $(".container2").empty();
   $(".container2").append(`<div id= "main-row"class="grid-row"></div>`)
@@ -45,7 +46,7 @@ function searchCity() {
     //console.log(data)
 
     for (var i = 0; i < data.length; i++) {
-      if (data[i].city === citySearch) {
+      if (data[i].city === citySearch && data[i].state===stateSearch) {
 
         console.log(data[i].city)
         $(".container2").append(`

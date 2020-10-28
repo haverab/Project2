@@ -50,6 +50,7 @@ module.exports = function(app) {
   app.get("/gig", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/gigform.html"));
   });
+
   app.get("/recruiterGigs", (req, res)=>{
     if(req.user && req.user.userType === "recruiter"){
       res.sendFile(path.join(__dirname, "../public/recruiterGigs.html"));
@@ -57,5 +58,15 @@ module.exports = function(app) {
       res.sendFile(path.join(__dirname, "../public/login.html"));
     }
   }) 
-};
+
+  app.get("/findrecruiter", (req, res)=>{
+
+    if(req.user && req.user.userType !== "recruiter"){
+      res.sendFile(path.join(__dirname, "../public/findrecruiter.html"));
+    } else{
+      res.sendFile(path.join(__dirname, "../public/login.html"));
+    }
+    
+});
+}
 

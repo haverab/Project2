@@ -35,7 +35,8 @@ $(document).ready(() => {
 
 function searchCity() {
 
-  let citySearch = $('#input').val()
+  let citySearch = $('#input').val().toLowerCase()
+  let stateSearch =$('#state').val().toLowerCase()
 
   $(".container2").empty();
   $(".container2").append(`<div id= "main-row"class="grid-row"></div>`)
@@ -45,7 +46,7 @@ function searchCity() {
     //console.log(data)
 
     for (var i = 0; i < data.length; i++) {
-      if (data[i].city === citySearch) {
+      if (data[i].city.toLowerCase() === citySearch && data[i].state.toLowerCase()==stateSearch) {
 
         console.log(data[i].city)
         $(".container2").append(`

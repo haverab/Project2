@@ -9,6 +9,28 @@
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+  <style>
+    body {
+      background-color: tan
+    }
+    .jumbotron {
+      color: white;
+      background-color: black;
+      margin-top: 10px;
+    }
+
+    .card-header {
+      background-color: darkgrey;
+    }
+    .card-body {
+      background-color: lightgray;
+    }
+    .btn {
+      background-color: black;
+    }
+  </style>
+
+
 </head>
 <body>
 
@@ -23,15 +45,12 @@
 
         <div class="card">
           <div class="card-header">
-            <h3><strong>Add Gig</strong></h3>
+
+            <h3><strong>Add a Gig</strong></h3>
+
           </div>
           <div class="card-body">
             <form method="POST" role="form">
-
-                <div class="form-group">
-                    <label for="recruiterId">Recruiter ID</label>
-                    <input type="text" class="form-control" id="recruiterId">
-                  </div>
 
               <div class="form-group">
                 <label for="jobtitle">Job Title</label>
@@ -56,11 +75,18 @@
             </form>
             <br>
             <div class="text-right">
+              <!-- <button type="submit" class="btn btn-primary btn-md" id="findbtn"><span class="fa fa-fire"></span> Find A Candidate</button> -->
               <button type="submit" class="btn btn-primary btn-md" id="gigbtn"><span class="fa fa-fire"></span> Add Gig</button>
             </div>
           </div>
         </div>
-        <div id="container2" class="container2"></div>
+
+      
+            </div>
+          </div>
+        </div>
+        <!-- <div id="container2" class="container2"></div> -->
+
 
       </div>
     </div>

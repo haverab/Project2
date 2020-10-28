@@ -60,7 +60,7 @@ module.exports = function(app) {
 
 //  Route to return available candidates on the browser
   app.get("/api/available",(req, res)=>{
-   db.User.findAll({attributes:["email","firstName", "lastName","phone","userType","imgUrl"]}).then(results=>{
+   db.User.findAll({attributes:["email","firstName", "lastName","phone","message","userType","imgUrl"]}).then(results=>{
       res.json(results)
     })
   });
@@ -72,10 +72,41 @@ module.exports = function(app) {
    });
   // update gig using sequelize
   app.post("/api/gig", function(req, res) {
-    
-    db.Gigs.create(req.body)
+    if(req.user && req.user.userType === "recruiter"){
+      req.body.recruiterId = req.user.id
+      req.body.UserId = req.user.id
+      db.Gigs.create(req.body)
+      res.sendStatus(200)
+    }
+    else{
+      res.sendStatus(401)
+    }
   });
-
+  app.get("/api/recruitergigs", function(req, res) {
+    if(req.user && req.user.userType === "recruiter"){
+     
+      console.log(req.user)
+      db.Gigs.findAll({where:{UserId:req.user.id}})
+      .then(results=> res.json(results))
+     
+    }
+    else{
+      res.sendStatus(401)
+    }
+  });
+  // app.get("/api/gigs/:id", function(req, res) {
+  //   // Here we add an "include" property to our options in our findOne query
+  //   // We set the value to an array of the models we want to include in a left outer join
+  //   // In this case, just db.Post
+  //   db.User.findOne({
+  //     where: {
+  //       id: req.params.id
+  //     },
+  //     include: [db.Gigs]
+  //   }).then(function(dbUser) {
+  //     res.json(dbUser);
+  //   });
+  // });
  
 
   

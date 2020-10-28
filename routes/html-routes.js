@@ -14,7 +14,7 @@ module.exports = function(app) {
       res.redirect("/members");
     }
     
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
 
@@ -26,7 +26,13 @@ module.exports = function(app) {
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
-
+  app.get("/signup", function(req, res) {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
+  });
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
@@ -44,6 +50,12 @@ module.exports = function(app) {
   app.get("/gig", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/gigform.html"));
   });
-   
+  app.get("/recruiterGigs", (req, res)=>{
+    if(req.user && req.user.userType === "recruiter"){
+      res.sendFile(path.join(__dirname, "../public/recruiterGigs.html"));
+    }else{
+      res.sendFile(path.join(__dirname, "../public/login.html"));
+    }
+  }) 
 };
 

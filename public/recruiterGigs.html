@@ -4,11 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recruiter Gigs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color:tan
+        }
+        h1{
+            text-align: center;
+            border: solid black
+        }
+        #container{
+            margin:0px 100px 10px 100px;
+            border: solid black;
+        }
+        h2 {
+            text-align:center;
+        }
+        hr {
+            color:black;
+        }
+        .recPost {
+            background-color:lightslategrey;
+            width: 600px;
+            height: 650px;
+            margin:auto;
+            border: solid black
+
+        }
+    </style>
 </head>
 <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="/js/recruiterGigs.js"></script>  
     <h1>My Gig Postings</h1> 
-    <div id="container3" class="container3"></div>
+    <div>
+        <container id="container3">
+            <h2>Gigs by Recruiter</h2>
+            <strong><hr></strong>
+            
+        </container>
+        <div class="recPost" name="recPost" placeholder="You have not posted gigs."></div>
+    </div>
 </body>
 </html>

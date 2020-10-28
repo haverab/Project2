@@ -65,12 +65,15 @@ module.exports = function(app) {
     })
   });
 
+
+//Route to return all gigs
   app.get("/api/gig",(req, res)=>{
     db.Gigs.findAll({attributes:["jobTitle","city", "state","jobUrl"]}).then(results=>{
        res.json(results)
      })
    });
-  // update gig using sequelize
+
+  //If user exist and is a recruiter, then update gig otherwise return page not found
   app.post("/api/gig", function(req, res) {
     if(req.user && req.user.userType === "recruiter"){
       req.body.recruiterId = req.user.id
@@ -82,6 +85,8 @@ module.exports = function(app) {
       res.sendStatus(401)
     }
   });
+
+  //If user exist and if the user is a recruiter, return all gigs assigned to the specified recruiter
   app.get("/api/recruitergigs", function(req, res) {
     if(req.user && req.user.userType === "recruiter"){
      
@@ -108,7 +113,19 @@ module.exports = function(app) {
   //   });
   // });
  
+  app.get("/api/findrecruiter",(req, res)=>{
+    if(req.user && req.user.userType !== "recruiter"){
 
+    db.User.findAll({attributes:["email","firstName", "lastName","phone","message","userType","imgUrl"]})
+    .then(results=>{
+       res.json(results)
+    })
+  }else {
+      res.sendStatus(401)
+    }
+     
+    
+   });
   
 
 

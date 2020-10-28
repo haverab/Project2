@@ -1,0 +1,59 @@
+h2{
+    text-align: center;
+}
+#register {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+  }
+  label {
+      margin: 5px;
+        }
+    input{
+        margin:5px;
+    }
+
+    .card {
+        padding-top: 5px;
+        display: inline-table;
+        text-align: center;
+        margin: 7px;
+        color: black;
+        font-weight: bold;
+        text-shadow: 5px 5px 7px rgb(73, 72, 71); 
+        border-radius: 30px;
+        width: 250px;
+        max-width: fit-content;
+        height: 350px;
+        max-height: fit-content;
+        background-color: rgba(500, 500, 500, 0.827);
+        animation: bounceInLeft; 
+        animation-duration: 2s;
+           
+        }
+
+        h2{
+            text-align: center;
+        }
+        .register {
+            margin: auto;
+            width: 60%;
+            border: 5px solid black;
+            padding: 10px;
+          }
+          label {
+              margin: 5px;
+                }
+            input{
+                margin:5px;
+            }
+        
+        #gigstyle {
+            background-color: tan;
+        }
+
+
+
+       
+      

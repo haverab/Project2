@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Gig Form</title>
@@ -8,12 +9,33 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="login.html">Coding Connection</a>
+
+      <li class="nav-item">
+        <a class="nav-link" href="login.html">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="recruiterView.html">Recruiter View</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="recruiterGigs.html">Gigs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="login.html">Logout</a>
+      </li>
+  </nav>
+
 
   <!--Inline Styling-->
   <style>
     body {
       background-color: tan
     }
+
     .jumbotron {
       color: white;
       background-color: black;
@@ -23,17 +45,21 @@
     .card-header {
       background-color: darkgrey;
     }
+
     .card-body {
       background-color: lightgray;
     }
+
     .btn {
       background-color: black;
     }
   </style>
+
 </head>
 
 <!--Main Content-->
 <body>
+
 
   <div class="container">
     <div class="jumbotron">
@@ -77,10 +103,12 @@
             <br>
             <div class="text-right">
               <!-- <button type="submit" class="btn btn-primary btn-md" id="findbtn"><span class="fa fa-fire"></span> Find A Candidate</button> -->
-              <button type="submit" class="btn btn-primary btn-md" id="gigbtn"><span class="fa fa-fire"></span> Post A Gig</button>
+              <button type="submit" class="btn btn-primary btn-md" id="gigbtn"><span class="fa fa-fire"></span> Post A
+                Gig</button>
             </div>
           </div>
         </div>
+
 
       
             </div>
@@ -88,13 +116,23 @@
         </div>
         
 
+
       </div>
     </div>
   </div>
+  <!-- <div id="container2" class="container2"></div> -->
+
+
+  </div>
+  </div>
+  </div>
+
 
 <!--JQuery & link to script-- gigs.js-->  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/gigs.js"></script>
 
 </body>
+
 </html>

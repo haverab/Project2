@@ -21,7 +21,7 @@ label {
       margin:5px;
   }
 
-  .card {
+  .card{
     padding-top: 5px;
     display: inline-table;
     text-align: center;
@@ -35,15 +35,18 @@ label {
     height: 350px;
     max-height: fit-content;
     background-color: rgba(500, 500, 500, 0.827);
-    animation: bounceInLeft; 
-    animation-duration: 2s;
     border-color: black;
     /* display: flex; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   }
-       
+  }
+    img:hover{
+    animation: animate__tada; 
+    animation-duration: 5s;
+    }
+   
+   
     
 
  #cardImg {
@@ -54,7 +57,7 @@ label {
     .container{
       border-radius: 5px;
       border-color: black; 
-      float:left;
+      float:center;
     }
 /*     
     body{
@@ -70,6 +73,6 @@ label {
     h1{
       text-align: center;
     }
-    /* body{
+    body{
       background-color: tan;
-    } */
+    }

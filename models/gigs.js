@@ -1,4 +1,4 @@
-// Creating our User model
+// Creating our Gig model
 module.exports = function(sequelize, DataTypes) {
     const Gigs = sequelize.define("Gigs", {
       id: {
@@ -6,13 +6,7 @@ module.exports = function(sequelize, DataTypes) {
         autoIncrement: true,
         primaryKey: true
       },
-
-      // recruiterId: {
-      //   type: DataTypes.INTEGER,
-      //   allowNull: false,
-        
-      // },
-     
+       
     jobTitle: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -20,11 +14,9 @@ module.exports = function(sequelize, DataTypes) {
      
   city: {
     type: DataTypes.STRING,
-    allowNull: false,
- 
+    allowNull: false, 
        
-      },
-      
+      },      
       
   state: {
     type: DataTypes.STRING,

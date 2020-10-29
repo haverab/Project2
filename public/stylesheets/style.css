@@ -57,7 +57,7 @@ label {
     .container{
       border-radius: 5px;
       border-color: black; 
-      float:left;
+      float:center;
     }
 /*     
     body{
@@ -73,6 +73,12 @@ label {
     h1{
       text-align: center;
     }
+
+    body{
+      background-color: tan;
+    }
+
     /* body{
       background-color: tan;
     } */
+

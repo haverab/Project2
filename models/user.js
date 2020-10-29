@@ -51,12 +51,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: true,
     },
-  
-    // resumeURL: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false
-
-    // }
+     
   });
 
   User.associate = function(models) {

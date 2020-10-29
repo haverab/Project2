@@ -13,7 +13,7 @@ $(document).ready(() => {
   
    
   
-    //When the create gig button is clicked, capture the user input
+    //When the create gig button is clicked, capture the user input and call the upsertGigs function
     $("#gigbtn").on("click", function () {
       event.stopPropagation();
       
@@ -35,32 +35,8 @@ $(document).ready(() => {
             window.location = "/recruitergigs"
           }
         })
-     //getGigs()
+     
         }
-
-
-        
-
-         // This function grabs posts from the database and updates the view
-  // function getGigs(recruiter) {
-  //   userId = recruiter || "";
-  //   if (userId) {
-  //     userId = "/?User_id=" + userId;
-  //   }
-  //   $.get("/api/gigs" + userId, function(data) {
-  //     console.log("Gigs", data);
-  //     gigs = data;
-  //     if (!gigs || !gigs.length) {
-  //       displayEmpty(recruiter);
-  //     }
-  //     else {
-  //       initializeRows();
-
-  //     }
-  //   });
-  // }
-      
-
 
 });
 

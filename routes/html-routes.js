@@ -51,6 +51,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/gigform.html"));
   });
 
+  //route to the the recruiterGigs.html to render all gigs specified to the recruiter
   app.get("/recruiterGigs", (req, res)=>{
     if(req.user && req.user.userType === "recruiter"){
       res.sendFile(path.join(__dirname, "../public/recruiterGigs.html"));
@@ -59,6 +60,7 @@ module.exports = function(app) {
     }
   }) 
 
+  //route to find a recruiter
   app.get("/findrecruiter", (req, res)=>{
 
     if(req.user && req.user.userType !== "recruiter"){

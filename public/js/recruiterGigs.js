@@ -1,3 +1,4 @@
+//render all gigs specific to the recruiter that posted the gig
 const init =()=>{
     $.get("/api/recruitergigs")
     .then(res=>{

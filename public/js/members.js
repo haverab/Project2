@@ -18,14 +18,9 @@ $(document).ready(() => {
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">${data[i].jobTitle}</h5>
-<<<<<<< HEAD
         <p class="card-text">${data[i].city} ${data[i].state}</p>
         <p class="card-text">${data[i].jobUrl}</p> 
         <img src="stylesheets/computer.png">
-=======
-        <p class="card-text">${data[i].city},${data[i].state}</p>
-        <p class="card-text">${data[i].jobUrl}</p>
->>>>>>> b453c2219b9773a8e28fe5d21776ca5e5baa60ef
         <a href=${data[i].jobUrl} target="_blank" class="btn btn-primary" id="gig">Gig It!</a>
       </div>
     </div>

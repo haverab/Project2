@@ -21,7 +21,8 @@ $(document).ready(() => {
       <div class="card-body">
         <h5 class="card-title">${data[i].jobTitle}</h5>
         <p class="card-text">${data[i].city} ${data[i].state}</p>
-        <p class="card-text">${data[i].jobUrl}</p>
+        <p class="card-text">${data[i].jobUrl}</p> 
+        <img src="stylesheets/computer.png">
         <a href=${data[i].jobUrl} target="_blank" class="btn btn-primary" id="gig">Gig It!</a>
       </div>
     </div>
@@ -56,6 +57,7 @@ function searchCity() {
           <h5 class="card-title">${data[i].jobTitle}</h5>
           <p class="card-text">${data[i].city} ${data[i].state}</p>
           <p class="card-text">${data[i].jobUrl}</p>
+          <img src="stylesheets/computer.png">
           <a href=${data[i].jobUrl} class="btn btn-primary" id="gig">Gig It!</a>
         </div>
       </div>
@@ -89,6 +91,7 @@ $.get("/api/gig").then(data => {
           <h5 class="card-title">${data[i].jobTitle}</h5>
           <p class="card-text">${data[i].city} ${data[i].state}</p>
           <p class="card-text">${data[i].jobUrl}</p>
+          <img src="stylesheets/computer.png">
           <a href=${data[i].jobUrl} target="_blank" class="btn btn-primary" id="gig">Gig It!</a>
         </div>
       </div>

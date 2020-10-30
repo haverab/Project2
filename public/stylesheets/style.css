@@ -5,8 +5,14 @@ form.login {
 }
 
 h2{
-  text-align: center;
+  text-align: left;
 }
+
+.member-name{
+  text-align: center;
+  text-decoration: bold;
+}
+
 .signup {
   margin: auto;
   width: 100%; 

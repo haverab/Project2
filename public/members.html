@@ -11,7 +11,7 @@
 
   <!--Bootstrap CSS framework and stylesheet-->
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+
   <link href="stylesheets/style.css" rel="stylesheet">
 </head>
 
@@ -26,8 +26,8 @@
       height: 300px;
       background-repeat: no-repeat;
       background-size: cover;
-      border-bottom: 1px solid #9e8f84;
-
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
       margin-top: 10px;
       text-align: left;
     }
@@ -58,7 +58,7 @@
     <br>
     <br>
     <br>
-    <h3><strong> Welcome <span class="member-name"></span></strong> </h3>
+    <h2><strong> Welcome <span class="member-name"></span></strong> </h2>
     <br>
     <br>
 
@@ -66,32 +66,36 @@
 
 
   <div class="container">
+
+
+    <h3><strong> Find a Gig:</strong></h3>
     <div class="row">
-      <div class="container">
-        <h3><strong> Find a Gig:</strong></h3>
-
-        <div class="col-sm-5">
-          <div class="field is-grouped is-grouped-multiline">
-            <p class="control is-expanded">
-              City: <input class="input is-large" id="input" type="text" value="" placeholder="">
-              State:<input class="input is-large" id="state" type="text" value="" placeholder="">
-            </p>
-          </div>
+      <div class="col-sm-6">
+        <div class="field is-grouped is-grouped-multiline">
+          <p class="control is-expanded">
+            City: <input class="input is-large" id="input" type="text" value="" placeholder="">
+            State:<input class="input is-large" id="state" type="text" value="" placeholder="">
+          </p>
         </div>
-
+      </div>
+   
+    
+      <div class="col-sm-2">
         <p class="control">
           <button type="button">
             <a class="button is-info is-large" id="cityButton">
               Search
             </a>
           </button>
+         
+       
           <button type="button">
             <a class="button is-info is-large" id="clearButton">
               Clear
             </a>
           </button>
         </p>
-
+      
       </div>
 
     </div>

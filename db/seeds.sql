@@ -37,6 +37,9 @@ INSERT INTO users (firstName, lastName, phone, message, email, password, userTyp
 VALUES ('Fabian', 'Byrd', '333-333-3333', 'NULL','fbyrd@recruiter.com', '$2a$10$ze9MQqp/7FFFvwPJxz1D.uTqD5gI0F73bN.D8h.sNogFEjLHtWR8C', 'recruiter','https://avatars1.githubusercontent.com/u/29986440?s=460&u=5db63f3f5430a5aea348759932da25a74df9e7e9&v=4', NOW(0), NOW(0));
 INSERT INTO users (firstName, lastName, phone, message, email, password, userType, imgUrl, createdAt, updatedAt)
 VALUES ('Pat', 'Howard', '222-958-7894', 'NULL','phoward@recruiter.com', '$2a$10$G0INudpMl46NVrKAXZwRJ.3yw83ohzd4ZtPqnW5rrASVMF/OGX56u', 'recruiter','https://avatars1.githubusercontent.com/u/7431751?s=460&u=e4d442718cd813e911c010b57b4953000967252a&v=4', NOW(0), NOW(0));
+INSERT INTO users (firstName, lastName, phone, message, email, password, userType, imgUrl, createdAt, updatedAt)
+VALUES ('Kevin', 'Fauth', '639-784-5526', 'NULL','kfauth@recruiter.com', '$2a$10$Dks7rLscovTN4qFw0y7fpu2gFjxQLJ3EYCdsqxO5bSZxsWGjm3e0m', 'recruiter','https://avatars3.githubusercontent.com/u/2074492?s=460&u=718a1931b36cd336b203409c0d2c0c9de58c92ed&v=4', NOW(0), NOW(0));
+
 
 
 
@@ -57,7 +60,7 @@ VALUES ('Full Stack Developer', 'Memphis', 'Tennessee', 'http://www.hired.com',1
 INSERT INTO gigs (jobTitle, city, state, jobURL, UserId, createdAt, updatedAt)
 VALUES ('IT Specialist','Memphis', 'Tennessee', 'http://www.hired.com', 11, NOW(0), NOW(0));
 INSERT INTO gigs (jobTitle, city, state, jobURL, UserId, createdAt, updatedAt)
-VALUES ('IT Specialist', 'Memphis', 'Tennessee', 'http://www.hired.com', 12, NOW(0), NOW(0));
+VALUES ('Data Tester', 'New York', 'New York', 'http://www.hired.com', 12, NOW(0), NOW(0));
 
 
 

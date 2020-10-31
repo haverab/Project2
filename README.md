@@ -43,7 +43,7 @@ THEN I am returned to the login window
 * CSS Frameworks: Bootstrap CSS and Animate CSS
 * Server-side APIs: api/users and api/gigs
 
-Deployed site: https://
+Deployed site: https://https://salty-reef-06215.herokuapp.com/ 
 
 The following image demonstrates the application functionality:
-![On Your Fit Demo](https://)
+![Code Connection Demo](https://https://github.com/haverab/Project2)
